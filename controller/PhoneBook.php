@@ -14,8 +14,8 @@ class PhoneBook {
 
     public function display() {
         $data = $this->model->get();
-
-        $this->template->header();
+        
+        $this->template->header("Phone Book");
         $this->template->view("view/PhoneBookView.php", $data);
         $this->template->footer();
     }

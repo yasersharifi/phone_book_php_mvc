@@ -2,7 +2,7 @@
 
 class Template
 {
-    public function header() {
+    public function header($title) {
         include_once "view/template/header.php";
     }
 
