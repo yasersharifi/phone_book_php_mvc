@@ -1,19 +1,22 @@
 <?php
 include_once "model/PhoneBookModel.php";
-include_once "view/PhoneBookView.php";
+include_once "library/Template.php";
 
 class PhoneBook {
     public $model;
-    public $view;
+    public $template;
 
     public function __construct()
     {
         $this->model = new PhoneBookModel();
-        $this->view = new PhoneBookView();
+        $this->template = new Template();
     }
 
     public function display() {
-        $this->view->personList = $this->model->get();
-        $this->view->render();
+        $data = $this->model->get();
+
+        $this->template->header();
+        $this->template->view("view/PhoneBookView.php", $data);
+        $this->template->footer();
     }
 }
