@@ -5,12 +5,12 @@ class Database {
     private $password = "";
     private $database = "phonebook";
 
-    protected $connection;
+    public $connection;
 
     public function __construct()
     {
         if (! $this->connection) {
-            $this->connection = new mysqli($this->host, $this->username, $this->$this->password, $this->database);
+            $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
             return $this->connection;
         }
 
